@@ -1,0 +1,95 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>注音闖關練習｜我會ㄅㄆㄇ</title>
+
+  <!-- 基本 SEO -->
+  <meta name="description" content="給小朋友的注音符號練習小遊戲：按下開始後，認出注音並在倒數計時內回答！" />
+
+  <!-- 字型 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="app" aria-labelledby="page-title">
+    <section class="app__board" aria-label="注音練習遊戲區">
+      <!-- 右上角關閉按鈕 -->
+      <button
+        id="closeButton"
+        class="close-btn"
+        type="button"
+        aria-label="關閉遊戲"
+      >
+        ✕
+      </button>
+
+      <!-- 藍色框：標題 -->
+      <header class="title-box">
+        <h1 id="page-title" class="title-box__text">我會 ㄅ ㄆ ㄇ</h1>
+      </header>
+
+      <!-- 綠色框：注音顯示區 -->
+      <section class="symbol-area" aria-live="polite">
+        <span id="symbolText" class="symbol-area__char">準備好了嗎？</span>
+
+        <!-- 錯誤動畫 -->
+        <img
+          id="explosionImage"
+          class="symbol-area__explosion"
+          src="images/explosion.gif"
+          alt="時間到囉！注音爆炸了～"
+        />
+
+        <!-- 關閉確認動畫 -->
+        <img
+          id="day21Image"
+          class="symbol-area__day21"
+          src="images/day21.gif"
+          alt="確定要關閉嗎？小提醒動畫"
+        />
+      </section>
+
+      <!-- 一般模式：倒數 + 開始/完成 -->
+      <section id="mainControlRow" class="control-row">
+        <div class="timer-box" aria-label="倒數計時">
+          <span class="timer-box__label">倒數</span>
+          <span id="timerValue" class="timer-box__value">12</span>
+          <span class="timer-box__unit">秒</span>
+        </div>
+
+        <button
+          id="actionButton"
+          class="action-box"
+          type="button"
+          aria-label="開始或完成這一題"
+        >
+          <span class="action-box__text">開始</span>
+        </button>
+      </section>
+
+      <!-- 關閉確認模式：取消 + 關閉 -->
+      <section id="confirmControlRow" class="control-row control-row--confirm">
+        <button
+          id="cancelExitButton"
+          class="action-box action-box--orange"
+          type="button"
+        >
+          <span class="action-box__text">取消</span>
+        </button>
+        <button
+          id="confirmExitButton"
+          class="action-box"
+          type="button"
+        >
+          <span class="action-box__text">關閉</span>
+        </button>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
